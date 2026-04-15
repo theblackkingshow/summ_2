@@ -1,0 +1,205 @@
+:root {
+    --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --container-bg: rgba(255, 255, 255, 0.95);
+    --text-color: #333;
+    --input-border: #ddd;
+    --button-bg: #007bff;
+    --button-hover: #0056b3;
+    --random-btn-bg: #28a745;
+    --random-btn-hover: #218838;
+    --audio-btn-bg: #28a745;
+    --audio-btn-hover: #218838;
+    --heading-color: #333;
+    --error-color: #dc3545;
+    --definition-h3: #007bff;
+}
+
+.dark-mode {
+    --bg-gradient: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    --container-bg: rgba(44, 62, 80, 0.95);
+    --text-color: #ecf0f1;
+    --input-border: #7f8c8d;
+    --button-bg: #3498db;
+    --button-hover: #2980b9;
+    --random-btn-bg: #27ae60;
+    --random-btn-hover: #229954;
+    --audio-btn-bg: #27ae60;
+    --audio-btn-hover: #229954;
+    --heading-color: #ecf0f1;
+    --error-color: #e74c3c;
+    --definition-h3: #3498db;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg-gradient);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    color: var(--text-color);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    background-color: var(--container-bg);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    max-width: 700px;
+    width: 100%;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    animation: fadeIn 0.5s ease-in;
+    transition: background-color 0.3s ease;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: var(--heading-color);
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+form {
+    margin-bottom: 30px;
+}
+
+input {
+    padding: 12px;
+    width: calc(100% - 100px);
+    margin-right: 10px;
+    border: 2px solid var(--input-border);
+    border-radius: 25px;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    outline: none;
+    background-color: var(--container-bg);
+    color: var(--text-color);
+}
+
+input:focus {
+    border-color: var(--button-bg);
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+}
+
+button {
+    padding: 12px 20px;
+    background-color: var(--button-bg);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: var(--button-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+#random-btn {
+    background-color: var(--random-btn-bg);
+}
+
+#random-btn:hover {
+    background-color: var(--random-btn-hover);
+}
+
+.results {
+    text-align: left;
+    margin-top: 30px;
+    animation: slideIn 0.5s ease-out;
+}
+
+.word-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--heading-color);
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    transition: color 0.3s ease;
+}
+
+.audio-btn {
+    background-color: var(--audio-btn-bg);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s;
+}
+
+.audio-btn:hover {
+    background-color: var(--audio-btn-hover);
+}
+
+.definition h3,
+.synonym h3 {
+    color: var(--definition-h3);
+    margin-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.error {
+    color: var(--error-color);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        max-width: 90%;
+    }
+    input {
+        width: calc(100% - 80px);
+        margin-right: 5px;
+    }
+    button {
+        padding: 10px 15px;
+        font-size: 14px;
+        margin-left: 5px;
+    }
+}
